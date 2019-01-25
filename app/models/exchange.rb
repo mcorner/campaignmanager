@@ -1,6 +1,6 @@
 class Exchange < ActiveRecord::Base
-    
-    
+
+
     def self.all
         [
             { name:"atomx"},
@@ -11,7 +11,7 @@ class Exchange < ActiveRecord::Base
             { name:"nexage"},
             { name:"smartyads"},
             { name:"smaato"},
-            { name: "kadam"}, 
+            { name: "kadam"},
             { name: "citenko"},
             { name: "taggify"},
             { name: "ssphwy"},
@@ -25,6 +25,7 @@ class Exchange < ActiveRecord::Base
             { name: "smartadserver"},
             { name: "waardx"},
             { name: "wideorbit"},
+            { name: "bidswitch"},
             { name: "c1x", label:"C1X"},
             { name: "appnexus",
                 attributes: [
@@ -44,7 +45,7 @@ class Exchange < ActiveRecord::Base
                         label: "Click Through URL",
                         value: "",
                         form_type: "input"
-                    },    
+                    },
                     {
                         name: "tracking_url",
                         label: "Tracking URL",
@@ -236,7 +237,7 @@ class Exchange < ActiveRecord::Base
                 			{ value: '476', label: 'comScore vCE - Ad Swapping'},
                 			{ value: '477', label: 'DoubleVerify BrandShield - Ad Swapping'},
                 			{ value: '481', label: 'eXelate'},
-                			{ value: '485', label: 'comScore - VoiceFive'},							
+                			{ value: '485', label: 'comScore - VoiceFive'},
                 			{ value: '486', label: 'AdLoox - Ad Swapping'},
                 			{ value: '489', label: 'Revenue Cloud'},
                 			{ value: '490', label: 'AdLedge - Ad Blocking'},
@@ -336,7 +337,7 @@ class Exchange < ActiveRecord::Base
             				{ value: '49', label: 'RichMedia capability type: RichMediaCapabilityNonSSL'},
             				{ value: '70', label: 'NativeEligibility: Native Eligible'},
             				{ value: '72', label: 'NativeEligibility: Native Not Eligible'},
-            				{ value: '105', label: 'Rendering: Sizeless AdX'}                            
+            				{ value: '105', label: 'Rendering: Sizeless AdX'}
                         ]
                     }
                 ]
@@ -363,7 +364,7 @@ class Exchange < ActiveRecord::Base
             { name: "tappx" },
             { name: "spotx" },
             { name: "vmax" },
-            { name: "google", 
+            { name: "google",
                 attributes: [
                     {
                         name: "billing_id",
@@ -379,10 +380,9 @@ class Exchange < ActiveRecord::Base
             { name: "openssp" }
         ].sort_by{|i| i[:name] }
     end
-   
+
     def self.find_exchange(name)
         self.all.find {|s| s[:name].to_s.eql?(name) }
     end
-    
-end
 
+end
