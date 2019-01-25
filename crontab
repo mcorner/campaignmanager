@@ -1,0 +1,1 @@
+*/5 * * * * /bin/bash -l -c "cd /rtb4free_admin && bundle exec rake bidagg:campaigns >> /var/log/cron.log 2>&1"

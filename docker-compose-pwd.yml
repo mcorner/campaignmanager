@@ -11,7 +11,7 @@ services:
       - MYSQL_PASSWORD=test
   web:
     image: ploh/rtbadmin_open
-    command: bash -c "./wait-for-it.sh db:3306 --timeout=120; bundle exec rails s -p 3000 -b '0.0.0.0' "
+    command: cron && bash -c "./wait-for-it.sh db:3306 --timeout=120; bundle exec rails s -p 3000 -b '0.0.0.0' "
     ports:
       - "3000:3000"
     environment:
@@ -28,4 +28,3 @@ services:
       - RTB4FREE_ELASTICSEARCH_KIBANA_URL=
       - RTB4FREE_ELASTICSEARCH_REQUESTS_INDEX=bidderlogs
       - RTB4FREE_ELASTICSEARCH_STATS_INDEX=stats
-
