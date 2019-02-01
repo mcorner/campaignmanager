@@ -30,7 +30,7 @@ class Exchange < ActiveRecord::Base
                     {
                         name: "bidswitch_iab_cat",
                         label: "BidSwitch IAB Category",
-                        value: '["IAB5-9"]',
+                        value: 'IAB5-9',
                         form_type: "input"
                     },
                     {
