@@ -25,7 +25,28 @@ class Exchange < ActiveRecord::Base
             { name: "smartadserver"},
             { name: "waardx"},
             { name: "wideorbit"},
-            { name: "bidswitch"},
+            { name: "bidswitch",
+                attributes: [
+                    {
+                        name: "bidswitch_iab_cat",
+                        label: "BidSwitch IAB Category",
+                        value: '["IAB5-9"]',
+                        form_type: "input"
+                    },
+                    {
+                        name: "bidswitch_advertiser_name",
+                        label: "BidSwitch Advertiser Name",
+                        value: '',
+                        form_type: "input"
+                    },
+                    {
+                        name: "bidswitch_agency_name",
+                        label: "BidSwitch agency Name",
+                        value: '',
+                        form_type: "input"
+                    },
+                ]
+            },
             { name: "c1x", label:"C1X"},
             { name: "appnexus",
                 attributes: [
